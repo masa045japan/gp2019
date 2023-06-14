@@ -17,7 +17,7 @@ public class destroy : MonoBehaviour {
 	void OnCollisionEnter(Collision collison)
 	{
 		Score.score++;
-        Debug.Log(Score.score.ToString("D4"));
+        //Debug.Log(Score.score.ToString("D4"));
 		Destroy (gameObject);
 	}
 }
