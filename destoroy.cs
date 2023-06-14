@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Score : MonoBehaviour {
-
-	static public int score = 0;
+public class destroy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,10 +11,13 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (10 <= score) 
-		{
-			SceneManager.LoadScene("Result");
-		}
 		
+	}
+
+	void OnCollisionEnter(Collision collison)
+	{
+		Score.score++;
+        Debug.Log(Score.score.ToString("D4"));
+		Destroy (gameObject);
 	}
 }

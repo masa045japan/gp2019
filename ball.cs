@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,4 +14,9 @@ public class ball : MonoBehaviour {
 		GetComponent<Rigidbody> ().AddForce ((transform.right - transform.up) * speed,
 			ForceMode.VelocityChange);
 	}
+
+    void Update(){
+        GetComponent<Rigidbody>().velocity =
+        GetComponent<Rigidbody>().velocity.normalized * speed;
+    }
 }
